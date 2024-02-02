@@ -3,8 +3,8 @@ import axios from 'axios';
 
 class Vote extends Component {
   constructor(props) {
-    super(props); // Changed to super(props)
-    this.APIHOSTPORT = `${process.env.REACT_APP_APIHOSTPORT}`;
+    super(props);
+    this.APIHOSTPORT = `${process.env.REACT_APP_APIHOSTPORT}`; 
     this.state = {
       vote: props.initialVotes || 0
     };
@@ -12,7 +12,7 @@ class Vote extends Component {
   }
 
   handleClick() {
-    const url = `http://${this.APIHOSTPORT}/movies/${this.props.id}/vote`;
+    const url = `https://${this.APIHOSTPORT}/movies/${this.props.id}/vote`; 
     axios.get(url)
       .then(response => this.setState({ vote: response.data.votes }))
   }

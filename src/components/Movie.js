@@ -13,7 +13,7 @@ class Movie extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://${this.APIHOSTPORT}/movies/${this.props.id}`).then(
+    axios.get(`https://${this.APIHOSTPORT}/movies/${this.props.id}`).then( 
       response => this.setState({
         movie: response.data,
         loaded: true
